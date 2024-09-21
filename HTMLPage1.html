@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea de Tiempo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .timeline-container {
+            width: 100%;
+            white-space: nowrap;
+            overflow-x: auto; /* Permite el scroll horizontal */
+        }
+
+        .timeline-phase {
+            min-width: 300px; /* Aumenta el ancho mínimo */
+            max-width: 500px; /* Aumenta el ancho máximo */
+            flex-shrink: 0;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+            overflow: hidden; /* Oculta el contenido que se sale del contenedor */
+        }
+
+
+            .timeline-phase h2 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+                white-space: normal; /* Permite que el texto salte a la siguiente línea */
+            }
+
+            .timeline-phase p {
+                max-height: 100px; /* Limita la altura del párrafo */
+                overflow: hidden; /* Oculta el desbordamiento */
+                text-overflow: ellipsis; /* Agrega "..." si el texto se corta */
+                white-space: normal; /* Permite el salto de línea */
+            }
+
+        .image-container {
+            text-align: center; /* Centra la imagen */
+            margin-bottom: 15px;
+        }
+
+        .timeline {
+            display: flex;
+            gap: 30px; /* Aumenta el espacio entre fases */
+        }
+
+
+        .bg-primary {
+            background-color: #007bff !important;
+        }
+
+        .bg-secondary {
+            background-color: #6c757d !important;
+        }
+
+        .bg-success {
+            background-color: #28a745 !important;
+        }
+
+        .bg-danger {
+            background-color: #dc3545 !important;
+        }
+
+        .bg-warning {
+            background-color: #ffc107 !important;
+        }
+
+        .bg-info {
+            background-color: #17a2b8 !important;
+
+        }
+        .modal-content {
+            border-radius: 10px; /* Bordes redondeados para el modal */
+        }
+
+        .modal-header {
+            background-color: #007bff; /* Color de fondo del encabezado */
+            color: white; /* Color del texto del encabezado */
+        }
+
+        .modal-body {
+            padding: 20px; /* Espaciado interno del cuerpo del modal */
+            background-color: #f9f9f9; /* Color de fondo del cuerpo del modal */
+            color: #333; /* Color del texto del cuerpo */
+        }
+
+        .modal-footer {
+            border-top: 1px solid #dee2e6; /* Línea en la parte superior del pie de modal */
+            padding: 10px; /* Espaciado interno del pie de modal */
+        }
+
+        .btn-close {
+            filter: brightness(0) invert(1); /* Cambia el color del botón de cerrar a blanco */
+        }
+
+        .btn-light {
+            background-color: #f8f9fa; /* Color de fondo del botón */
+            color: #333; /* Color del texto del botón */
+        }
+
+            .btn-light:hover {
+                background-color: #e2e6ea; /* Color de fondo al pasar el mouse por el botón */
+                color: #000; /* Color del texto al pasar el mouse por el botón */
+            }
+
+        .apa-text {
+            font-family: "Times New Roman", Times, serif; /* Fuente estándar de APA */
+            font-size: 12pt; /* Tamaño de fuente de 12 puntos */
+            line-height: 1.5; /* Espaciado entre líneas */
+            margin: 0 0 1em; /* Margen inferior para separar párrafos */
+        }
+
+            .apa-text h2 {
+                font-size: 14pt; /* Tamaño de fuente para títulos */
+                font-weight: bold; /* Negrita para títulos */
+                margin-top: 1.5em; /* Espaciado superior */
+                margin-bottom: 0.5em; /* Espaciado inferior */
+            }
+
+            .apa-text p {
+                text-indent: 0.5in; /* Sangría para el primer renglón de cada párrafo */
+            }
+
+            .apa-text ul {
+                margin-left: 1.5in; /* Sangría para listas */
+                list-style-type: disc; /* Tipo de lista */
+            }
+
+            .apa-text li {
+                margin-bottom: 0.5em; /* Espaciado inferior para elementos de lista */
+            }
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            margin: 20px 0; /* Espaciado vertical */
+        }
+        body{
+            background-color: black;
+        }
+        h1{
+            color:white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center my-4">Línea de Tiempo: Evolución de la  Responsabilidad Social Empresarial.</h1>
+        <div class="button-container">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalintegrantes">
+                Ver Integrantes
+            </button>
+        </div>
+
+        <div class="timeline-container d-flex">
+            <div class="timeline">
+                <div class="timeline-phase bg-primary">
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/i8eXf0D.png" alt="Fase 1: Finales del siglo XIX - Inicios del XX" class="img-fluid rounded">
+                    </div>
+                    <h2>Fase 1: Finales del siglo XIX - Inicios del XX</h2>
+                    <p> El origen de la responsabilidad social empresarial se remonta al período de la Revolución Industrial. Los primeros empresarios filántropos, como Andrew Carnegie, defendieron la idea de que las empresas tienen una responsabilidad moral con la sociedad.</p>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalFase1">Aprender más</button>
+                    </div>
+                </div>
+
+                <div class="timeline-phase bg-secondary">
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/jtttbIO.png" alt="Fase 2: 1953 - Primer libro sobre RSE" class="img-fluid rounded">
+                    </div>
+                    <h2>Fase 2: 1953 - Primer libro sobre RSE</h2>
+                    <p> Howard R. Bowen publica "Social Responsibilities of the Businessman", considerado el primer libro en definir claramente la RSE. Propone que las empresas deben integrar las preocupaciones sociales en su toma de decisiones.</p>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalFase2">Aprender más</button>
+                    </div>
+                </div>
+                <div class="timeline-phase bg-success">
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/hnkwtwL.jpeg" alt="Fase 3: 1970s - La era de la regulación" class="img-fluid rounded">
+                    </div>
+                    <h2>Fase 3: 1970s - La era de la regulación</h2>
+                    <p> En los años 70, los gobiernos comienzan a implementar regulaciones ambientales y laborales. El concepto de RSE se consolida como una respuesta empresarial a las crecientes demandas legales y sociales.</p>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalFase3">Aprender más</button>
+                    </div>
+                </div>
+                <div class="timeline-phase bg-danger">
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/OPQBmXs.jpeg" alt="Fase 4: 1990s - Globalización y sostenibilidad" class="img-fluid rounded">
+                    </div>
+                    <h2>Fase 4: 1990s - Globalización y sostenibilidad</h2>
+                    <p>> La globalización impulsa la adopción de políticas de RSE más amplias. Se introduce el concepto de "desarrollo sostenible", haciendo que las empresas incluyan prácticas ambientales, sociales y de buen gobierno en sus estrategias.</p>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalFase4">Aprender más</button>
+                    </div>
+                </div>
+                <div class="timeline-phase bg-warning">
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/wXGax7Y.jpeg" alt="Fase 5: 2000s - Normas y estándares internacionales" class="img-fluid rounded">
+                    </div>
+                    <h2>Fase 5: 2000s - Normas y estándares internacionales</h2>
+                    <p> Surgen normas y certificaciones como el Pacto Global de la ONU (2000) y la ISO 26000 (2010), que guían a las empresas en la implementación de políticas de RSE.</p>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalFase5">Aprender más</button>
+                    </div>
+                </div>
+                <div class="timeline-phase bg-info">
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/NIVSOoH.jpeg" alt="Fase 6: 2020s - Responsabilidad social y cambio climático" class="img-fluid rounded">
+                    </div>
+                    <h2>Fase 6: 2020s - Responsabilidad social y cambio climático</h2>
+                    <p>En la última década, la RSE ha evolucionado hacia un enfoque más integral, destacando el compromiso con el cambio climático y la igualdad social. Las empresas son vistas como actores clave en la mitigación de los problemas globales.</p>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalFase6">Aprender más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<!-- Modal Fase 1 -->
+<div class="modal fade" id="modalFase1" tabindex="-1" aria-labelledby="modalFase1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFase1Label">Fase 1: Finales del siglo XIX - Inicios del XX</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Título: El Origen de la Responsabilidad Social Empresarial
+
+                A finales del siglo XIX y principios del XX, el mundo empresarial comenzó a experimentar un cambio significativo en la percepción de su papel en la sociedad. Durante la Revolución Industrial, la rápida expansión de las fábricas y la producción en masa generaron no solo riquezas, sino también problemas sociales como el trabajo infantil, la explotación laboral y condiciones de vida inhumanas. Ante esta realidad, algunos empresarios, como Andrew Carnegie y John D. Rockefeller, se convirtieron en defensores de la filantropía.
+
+                Carnegie, en particular, argumentaba que quienes acumulaban riquezas tenían la responsabilidad moral de utilizar sus recursos para mejorar la sociedad. Esta idea de responsabilidad social se extendió lentamente, con las empresas comenzando a considerar el impacto de sus acciones en las comunidades. Aunque estas iniciativas eran en gran medida voluntarias y no sistemáticas, sentaron las bases para lo que hoy conocemos como responsabilidad social empresarial (RSE).
+
+                La RSE emergió como un concepto que desafía a las empresas a equilibrar la búsqueda de beneficios económicos con un compromiso hacia el bienestar social. Esto no solo incluye donaciones y acciones filantrópicas, sino también la creación de prácticas comerciales que consideren el impacto ambiental y social. Así, el nacimiento de la RSE se entrelaza con el surgimiento de un nuevo modelo de negocio que busca la sostenibilidad y el desarrollo inclusivo, un tema que sigue siendo relevante en la actualidad.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Fase 2 -->
+<div class="modal fade" id="modalFase2" tabindex="-1" aria-labelledby="modalFase2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFase2Label">Fase 2: 1953 - Primer libro sobre RSE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Título: La RSE a través de la Literatura
+
+                En 1953, Howard R. Bowen publicó "Social Responsibilities of the Businessman", un texto fundamental que sentó las bases para el desarrollo del concepto de responsabilidad social empresarial. Bowen argumentaba que los empresarios no solo tenían que preocuparse por maximizar beneficios, sino que también debían considerar el bienestar de la sociedad en sus decisiones empresariales. Este libro se convirtió en un referente y propuso la idea de que las empresas deben ser responsables ante todos los interesados: empleados, consumidores, y la comunidad en general.
+
+                A medida que la sociedad comenzaba a exigir más responsabilidad de las empresas, la RSE comenzó a ganar atención en el ámbito académico y empresarial. Bowen introdujo un enfoque proactivo que instaba a las empresas a adoptar políticas que alineen sus operaciones con los intereses de la sociedad. Este cambio de paradigma no fue fácil; muchas empresas resistieron la idea de invertir en prácticas que no generaban beneficios inmediatos.
+
+                Sin embargo, el impacto de la obra de Bowen fue significativo. Comenzó un diálogo sobre la responsabilidad moral de las empresas, y sentó las bases para la creación de códigos de ética y prácticas empresariales que hoy consideramos estándar. Su trabajo inspiró a generaciones de empresarios y académicos, y la RSE se convirtió en un campo de estudio esencial para entender el papel de las empresas en el desarrollo sostenible.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Fase 3 -->
+<div class="modal fade" id="modalFase3" tabindex="-1" aria-labelledby="modalFase3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFase3Label">Fase 3: 1970s - La era de la regulación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Título: La Regulación y la RSE en los Años 70
+
+                Los años 70 marcaron un periodo de transformación en la relación entre las empresas y la sociedad. En respuesta a un creciente clamor público por justicia social y ambiental, los gobiernos comenzaron a implementar regulaciones que obligaban a las empresas a actuar de manera más responsable. Esta era de regulación vino acompañada de un aumento en la conciencia social sobre problemas como la contaminación ambiental y los derechos laborales.
+
+                Durante esta década, se promulgaron leyes que establecieron normas mínimas para la protección del medio ambiente y los derechos de los trabajadores. Las empresas se encontraron bajo un escrutinio creciente, no solo de los reguladores, sino también de consumidores más informados que exigían prácticas comerciales éticas. Este nuevo entorno forzó a muchas organizaciones a reevaluar sus políticas y a adoptar enfoques más responsables.
+
+                La RSE se consolidó como una respuesta natural a estas demandas. Las empresas comenzaron a implementar programas de responsabilidad social y a trabajar activamente para mitigar su impacto ambiental. El concepto de sostenibilidad empezó a cobrar importancia, y las empresas que ignoraban estas tendencias a menudo enfrentaban boicots o críticas públicas. Así, la regulación de los años 70 no solo creó un marco legal, sino que también cimentó la importancia de la RSE en el discurso empresarial.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Fase 4 -->
+<div class="modal fade" id="modalFase4" tabindex="-1" aria-labelledby="modalFase4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFase4Label">Fase 4: 1990s - Globalización y sostenibilidad</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Título: La RSE en la Era de la Globalización
+
+                Los años 90 fueron testigos de una acelerada globalización que transformó la forma en que las empresas operaban y se relacionaban con la sociedad. En este contexto, la responsabilidad social empresarial adquirió una nueva dimensión. Las empresas que expandieron sus operaciones a nivel internacional se enfrentaron a una diversidad de culturas, regulaciones y expectativas sociales. Este entorno cambiante impulsó la necesidad de adoptar políticas de RSE más amplias y efectivas.
+
+                Durante esta década, la sostenibilidad se convirtió en un concepto central. Las empresas comenzaron a reconocer que su éxito a largo plazo dependía no solo de sus beneficios económicos, sino también de su capacidad para gestionar el impacto social y ambiental de sus actividades. Se introdujeron prácticas que incluían la reducción de residuos, la utilización de recursos sostenibles y la promoción de la equidad social en las comunidades donde operaban.
+
+                El surgimiento de certificaciones y estándares internacionales, como el ISO 14001, también contribuyó a formalizar la RSE. Las empresas que buscaban obtener estas certificaciones debían demostrar su compromiso con la sostenibilidad y la responsabilidad social. Así, los años 90 marcaron un punto de inflexión, donde la RSE pasó de ser una práctica opcional a convertirse en un elemento integral de la estrategia empresarial.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Fase 5 -->
+<div class="modal fade" id="modalFase5" tabindex="-1" aria-labelledby="modalFase5Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFase5Label">Fase 5: 2000s - Normas y estándares internacionales</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Título: La Normalización de la RSE en el Siglo XXI
+
+                Con la llegada del nuevo milenio, la responsabilidad social empresarial (RSE) se consolidó como una parte esencial de la estrategia corporativa a nivel global. Surgen normas y estándares internacionales, como el Pacto Global de la ONU en 2000 y la ISO 26000 en 2010, que establecen directrices claras para las empresas en cuanto a su comportamiento social y ambiental. Estas iniciativas no solo proporcionan un marco de referencia, sino que también fomentan la transparencia y la rendición de cuentas.
+
+                El Pacto Global, que alienta a las empresas a adoptar políticas sostenibles y socialmente responsables, se ha convertido en una referencia clave para aquellas que buscan alinear sus prácticas con principios universales de derechos humanos, trabajo, medio ambiente y lucha contra la corrupción. Por su parte, la ISO 26000 ofrece directrices sobre la RSE y ayuda a las organizaciones a integrar la sostenibilidad en su estrategia y operaciones.
+
+                Las empresas que adoptan estos estándares a menudo ven beneficios tangibles, como una mejor reputación, mayor lealtad de los clientes y una ventaja competitiva en el mercado. Además, cumplir con estos estándares internacionales permite a las empresas demostrar su compromiso con la sostenibilidad y atraer a inversores y consumidores que valoran la responsabilidad social.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Fase 6 -->
+<div class="modal fade" id="modalFase6" tabindex="-1" aria-labelledby="modalFase6Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFase6Label">Fase 6: 2020s - Responsabilidad social y cambio climático</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Título: La RSE en Tiempos de Cambio Climático
+
+                En la última década, la responsabilidad social empresarial (RSE) ha evolucionado hacia un enfoque más integral que abarca no solo aspectos sociales, sino también la urgente necesidad de abordar el cambio climático. La creciente conciencia sobre la crisis climática ha llevado a las empresas a reconsiderar su papel en la sostenibilidad y la justicia social.
+
+                La RSE ya no se limita a iniciativas filantrópicas; ahora se espera que las empresas tomen acciones concretas para reducir su huella de carbono, promover prácticas sostenibles y contribuir a un futuro más equitativo. Los consumidores, cada vez más informados y comprometidos, exigen a las empresas que actúen de manera responsable y que sean transparentes en sus esfuerzos.
+
+                Además, la presión de los inversores y reguladores está llevando a las empresas a establecer metas ambiciosas en relación con la sostenibilidad y la reducción de emisiones. Las estrategias de RSE que integran el cambio climático no solo ayudan a mitigar riesgos, sino que también pueden abrir nuevas oportunidades de negocio en sectores emergentes como las energías renovables y la economía circular. En este contexto, la RSE se ha convertido en un imperativo estratégico para las empresas que buscan prosperar en un mundo en constante cambio.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalintegrantes" tabindex="-1" aria-labelledby="modalintegrantes" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalintegrantes">Integrantes del Desarrollo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <ol>
+                   <li>Aguilar Jara Alen Keneddy</li>
+                   <li>
+                       Bejar Huachaca  Annie Jacy
+                   </li>
+                   <li>
+                       Barzola Olivares  Jerson Robinson
+                   </li>
+               </ol> 
+            </div>
+        </div>
+    </div>
+</div>
