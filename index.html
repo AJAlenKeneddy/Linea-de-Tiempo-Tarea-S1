@@ -15,42 +15,41 @@
         .timeline-container {
             width: 100%;
             white-space: nowrap;
-            overflow-x: auto; /* Permite el scroll horizontal */
-        }
+            overflow-x: auto; 
 
         .timeline-phase {
-            min-width: 300px; /* Aumenta el ancho mínimo */
-            max-width: 500px; /* Aumenta el ancho máximo */
+            min-width: 300px; 
+            max-width: 500px; 
             flex-shrink: 0;
             margin: 10px;
             padding: 20px;
             border-radius: 8px;
             color: #fff;
-            overflow: hidden; /* Oculta el contenido que se sale del contenedor */
+            overflow: hidden; 
         }
 
 
             .timeline-phase h2 {
                 font-size: 1.5rem;
                 margin-bottom: 10px;
-                white-space: normal; /* Permite que el texto salte a la siguiente línea */
+                white-space: normal; 
             }
 
             .timeline-phase p {
-                max-height: 100px; /* Limita la altura del párrafo */
-                overflow: hidden; /* Oculta el desbordamiento */
-                text-overflow: ellipsis; /* Agrega "..." si el texto se corta */
-                white-space: normal; /* Permite el salto de línea */
+                max-height: 100px; 
+                overflow: hidden; 
+                text-overflow: ellipsis;
+                white-space: normal; 
             }
 
         .image-container {
-            text-align: center; /* Centra la imagen */
+            text-align: center; 
             margin-bottom: 15px;
         }
 
         .timeline {
             display: flex;
-            gap: 30px; /* Aumenta el espacio entre fases */
+            gap: 30px;
         }
 
 
@@ -79,70 +78,70 @@
         }
 
         .modal-content {
-            border-radius: 10px; /* Bordes redondeados para el modal */
+            border-radius: 10px; 
         }
 
         .modal-header {
-            background-color: #007bff; /* Color de fondo del encabezado */
-            color: white; /* Color del texto del encabezado */
+            background-color: #007bff; 
+            color: white; 
         }
 
         .modal-body {
-            padding: 20px; /* Espaciado interno del cuerpo del modal */
-            background-color: #f9f9f9; /* Color de fondo del cuerpo del modal */
-            color: #333; /* Color del texto del cuerpo */
+            padding: 20px; 
+            background-color: #f9f9f9;
+            color: #333; 
         }
 
         .modal-footer {
-            border-top: 1px solid #dee2e6; /* Línea en la parte superior del pie de modal */
-            padding: 10px; /* Espaciado interno del pie de modal */
+            border-top: 1px solid #dee2e6; 
+            padding: 10px; 
         }
 
         .btn-close {
-            filter: brightness(0) invert(1); /* Cambia el color del botón de cerrar a blanco */
+            filter: brightness(0) invert(1);
         }
 
         .btn-light {
-            background-color: #f8f9fa; /* Color de fondo del botón */
-            color: #333; /* Color del texto del botón */
+            background-color: #f8f9fa;
+            color: #333; 
         }
 
             .btn-light:hover {
-                background-color: #e2e6ea; /* Color de fondo al pasar el mouse por el botón */
-                color: #000; /* Color del texto al pasar el mouse por el botón */
+                background-color: #e2e6ea; 
+                color: #000; 
             }
 
         .apa-text {
-            font-family: "Times New Roman", Times, serif; /* Fuente estándar de APA */
-            font-size: 12pt; /* Tamaño de fuente de 12 puntos */
-            line-height: 1.5; /* Espaciado entre líneas */
-            margin: 0 0 1em; /* Margen inferior para separar párrafos */
+            font-family: "Times New Roman", Times, serif; 
+            font-size: 12pt; 
+            line-height: 1.5; 
+            margin: 0 0 1em; 
         }
 
             .apa-text h2 {
-                font-size: 14pt; /* Tamaño de fuente para títulos */
-                font-weight: bold; /* Negrita para títulos */
-                margin-top: 1.5em; /* Espaciado superior */
-                margin-bottom: 0.5em; /* Espaciado inferior */
+                font-size: 14pt;
+                font-weight: bold; 
+                margin-top: 1.5em;
+                margin-bottom: 0.5em;
             }
 
             .apa-text p {
-                text-indent: 0.5in; /* Sangría para el primer renglón de cada párrafo */
+                text-indent: 0.5in; 
             }
 
             .apa-text ul {
-                margin-left: 1.5in; /* Sangría para listas */
-                list-style-type: disc; /* Tipo de lista */
+                margin-left: 1.5in; 
+                list-style-type: disc;
             }
 
             .apa-text li {
-                margin-bottom: 0.5em; /* Espaciado inferior para elementos de lista */
+                margin-bottom: 0.5em; 
             }
 
         .button-container {
             display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            margin: 20px 0; /* Espaciado vertical */
+            justify-content: center; 
+            margin: 20px 0; 
         }
 
         body {
@@ -154,16 +153,16 @@
         }
 
         footer {
-            background-color: #f4f4f9; /* Color de fondo del pie de página */
-            padding: 10px 0; /* Espaciado superior e inferior */
-            position: relative; /* Para que esté en la parte inferior si es necesario */
+            background-color: #f4f4f9; 
+            padding: 10px 0;
+            position: relative;
             bottom: 0;
-            width: 100%; /* Asegúrate de que el pie de página cubra todo el ancho */
+            width: 100%; 
         }
 
             footer p {
-                margin: 0; /* Elimina márgenes por defecto */
-                color: #333; /* Color del texto */
+                margin: 0; 
+                color: #333; 
             }
     </style>
 </head>
@@ -251,7 +250,7 @@
 
 </html>
 
-<!-- Modal Fase 1 -->
+
 <div class="modal fade" id="modalFase1" tabindex="-1" aria-labelledby="modalFase1Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -272,7 +271,7 @@
     </div>
 </div>
 
-<!-- Modal Fase 2 -->
+
 <div class="modal fade" id="modalFase2" tabindex="-1" aria-labelledby="modalFase2Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -293,7 +292,7 @@
     </div>
 </div>
 
-<!-- Modal Fase 3 -->
+
 <div class="modal fade" id="modalFase3" tabindex="-1" aria-labelledby="modalFase3Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -314,7 +313,7 @@
     </div>
 </div>
 
-<!-- Modal Fase 4 -->
+
 <div class="modal fade" id="modalFase4" tabindex="-1" aria-labelledby="modalFase4Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -335,7 +334,7 @@
     </div>
 </div>
 
-<!-- Modal Fase 5 -->
+
 <div class="modal fade" id="modalFase5" tabindex="-1" aria-labelledby="modalFase5Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -356,7 +355,7 @@
     </div>
 </div>
 
-<!-- Modal Fase 6 -->
+
 <div class="modal fade" id="modalFase6" tabindex="-1" aria-labelledby="modalFase6Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
